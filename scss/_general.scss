@@ -99,12 +99,24 @@ input:focus:-ms-input-placeholder {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  opacity: 0;
 }
 
 main {
   display: block;
   width: 100%;
   flex-grow: 1;
+}
+
+h1 {
+  @include font-decor-bold;
+  font-size: $font-title-large;
+  color: #fff;
+  line-height: 83px;
+}
+
+section {
+  padding: 100px 0;
 }
 
 @media(max-width: 1199px) {
