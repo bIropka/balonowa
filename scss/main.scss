@@ -1,12 +1,14 @@
 //////////////////////////////////////////////
-//////// font-awesome
+//////// fonts
 //////////////////////////////////////////////
 @import "fonts";
 
 //////////////////////////////////////////////
 //////// libs
 //////////////////////////////////////////////
-@import "../libs/font-awesome-4.7.0/scss/font-awesome";
+@import "../libs/font-awesome/scss/font-awesome";
+@import "../libs/bootstrap/bootstrap.min";
+@import "../libs/fancybox/jquery.fancybox.min";
 @import "../libs/slick/slick";
 
 //////////////////////////////////////////////
@@ -21,3 +23,9 @@
 @import "general";
 @import "components/header";
 @import "components/footer";
+@import "components/advantages";
+@import "components/products";
+@import "components/mailing";
+@import "components/clients";
+@import "components/reviews";
+@import "components/discount";
