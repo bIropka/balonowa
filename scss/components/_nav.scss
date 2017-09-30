@@ -1,0 +1,40 @@
+/*********************************************
+*********** nav
+**********************************************/
+
+nav {
+
+  a {
+    display: inline-block;
+    @include font-decor-bold;
+    color: #fff;
+    font-size: $font-M;
+    margin: 0 40px 0 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+  }
+
+}
+
+.burger {
+  display: none;
+}
+
+@media(max-width: 1199px) {
+
+}
+
+@media(max-width: 991px) {
+
+}
+
+@media(max-width: 767px) {
+
+}
+
+@media(max-width: 575px) {
+
+}

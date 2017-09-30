@@ -3,21 +3,92 @@
 **********************************************/
 
 header[role='banner'] {
+  display: block;
+  width: 100%;
+  padding: 35px 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.logo {
+  display: block;
+  width: 212px;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
 }
 
-@media(max-width: 1200px) {
+.phone {
+  padding: 0 0 0 50px;
+  position: relative;
+
+  &:hover {
+
+    i {
+      left: 5px;
+    }
+
+    a,
+    span {
+      text-shadow: 0 0 1px #fff;
+    }
+
+  }
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: $font-XL;
+    color: $color-blue-light;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .4s;
+  }
+
+  a {
+    font-size: $font-XL;
+    color: #fff;
+    @include font-decor-bold;
+
+    &:hover {
+      color: $color-blue-dark;
+      text-shadow: 0 0 1px $color-blue-dark;
+    }
+
+  }
+
+  span {
+    display: block;
+    font-size: $font-XXS;
+    @include font-decor;
+    color: #fff;
+    margin: 10px 0 0 0;
+    transition: .4s;
+  }
 
 }
 
-@media(max-width: 980px) {
+@media(max-width: 1199px) {
 
 }
 
-@media(max-width: 768px) {
+@media(max-width: 991px) {
 
 }
 
-@media(max-width: 480px) {
+@media(max-width: 767px) {
+
+}
+
+@media(max-width: 575px) {
 
 }

@@ -6,21 +6,119 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  @include font-main;
+  line-height: 1;
 }
 
+a,
+button {
+  transition: .4s;
+  cursor: pointer;
 
-@media(max-width: 1200px) {
-
-}
-
-@media(max-width: 980px) {
-
-}
-
-@media(max-width: 768px) {
+  &:hover {
+    text-decoration: none;
+  }
 
 }
 
-@media(max-width: 480px) {
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+a:hover,
+a:active,
+a:focus,
+button:hover,
+button:active,
+button:focus,
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus {
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  @include font-main;
+  font-size: $font-XL;
+  color: $color-grey-light;
+  opacity: 1;
+}
+
+input::-moz-placeholder {
+  @include font-main;
+  font-size: $font-XL;
+  color: $color-grey-light;
+  opacity: 1;
+}
+
+input:-moz-placeholder {
+  @include font-main;
+  font-size: $font-XL;
+  color: $color-grey-light;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  @include font-main;
+  font-size: $font-XL;
+  color: $color-grey-light;
+  opacity: 1;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  min-width: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: block;
+  width: 100%;
+  flex-grow: 1;
+}
+
+@media(max-width: 1199px) {
+
+}
+
+@media(max-width: 991px) {
+
+}
+
+@media(max-width: 767px) {
+
+}
+
+@media(max-width: 575px) {
 
 }

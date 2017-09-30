@@ -1,9 +1,15 @@
 /*********************************************
-*********** clients
+*********** top-block
 **********************************************/
 
-.clients {
+.top-main {
+  background: url(../images/background-top.jpg) no-repeat left top;
+  background-size: cover;
+  padding: 200px 0 0;
+}
 
+.top-short {
+  padding: 200px 0 0;
 }
 
 @media(max-width: 1199px) {
