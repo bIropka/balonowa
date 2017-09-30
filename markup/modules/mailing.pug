@@ -1,4 +1,14 @@
 section.mailing
     .container
         .row
-            div(class='col-12')
+            div(class='col-12 col-md-10 col-lg-8')
+                h2
+                    != 'Odbierz 10% rabatu na pierwsze zakupy! <br>Zapisz się na newsletter!'
+        .row
+            div(class='col-12 col-md-10 col-lg-8')
+                form(action='php/mailing.php' class='form-mailing' id='form-mailing')
+                    label
+                        input(type='email' name='mailing-email' id='mailing-email' placeholder='Wpisz swój e-mail')
+                        i(class='fa fa-envelope-o')
+                    button(type='submit' class='button button-yellow') Zapisz się
+                    p Dowiedz się pierwszy o promocjach swiatecznych oraz kodach rabatowych
