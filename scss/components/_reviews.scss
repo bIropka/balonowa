@@ -4,6 +4,103 @@
 
 .reviews {
 
+  h2 {
+    margin: 0 0 20px;
+  }
+
+}
+
+.slider-reviews {
+
+  .slide {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 30px 15px;
+    background: #fff;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    transition: .4s;
+    padding: 55px 45px;
+
+    &:hover {
+      border-radius: 15px;
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, .25);
+    }
+
+  }
+
+  .slick-dots {
+    width: 100%;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0 4px;
+      padding: 0;
+    }
+
+    button {
+      display: block;
+      color: transparent;
+      font-size: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $color-crimson;
+      background: #fff;
+      border-radius: 50%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        transition: .4s;
+      }
+
+    }
+
+    button:hover:before {
+      background: $color-crimson-light;
+      opacity: .5;
+    }
+
+    .slick-active button:before {
+      background: $color-crimson;
+      opacity: 1;
+    }
+
+  }
+
+  p {
+    display: block;
+    width: 100%;
+    line-height: 27px;
+    font-size: $font-S;
+  }
+
+  .review-name {
+    @include font-decor;
+    color: $color-blue-medium;
+    font-size: $font-XL;
+    margin: 5px 0;
+  }
+
+  .rate {
+    margin: 5px 0;
+  }
+
 }
 
 @media(max-width: 1199px) {
@@ -15,6 +112,14 @@
 }
 
 @media(max-width: 767px) {
+
+  .slider-reviews {
+
+    .slide {
+      padding: 25px;
+    }
+
+  }
 
 }
 

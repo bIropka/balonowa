@@ -1,0 +1,32 @@
+/*********************************************
+*********** rate
+**********************************************/
+
+.rate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  i {
+    font-size: $font-L;
+    color: $color-yellow;
+    margin: 0 1px;
+  }
+
+}
+
+@media(max-width: 1200px) {
+
+}
+
+@media(max-width: 980px) {
+
+}
+
+@media(max-width: 768px) {
+
+}
+
+@media(max-width: 480px) {
+
+}

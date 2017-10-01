@@ -47,7 +47,7 @@ header[role='banner'] {
     height: 30px;
     background: #fff;
     border-radius: 50%;
-    font-size: $font-XL;
+    font-size: $font-L;
     color: $color-blue-light;
     position: absolute;
     left: 0;
@@ -56,7 +56,7 @@ header[role='banner'] {
   }
 
   a {
-    font-size: $font-XL;
+    font-size: $font-L;
     color: #fff;
     @include font-decor-bold;
 

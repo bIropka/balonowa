@@ -54,28 +54,28 @@ textarea:focus {
 
 input::-webkit-input-placeholder {
   @include font-main;
-  font-size: $font-XL;
+  font-size: $font-L;
   color: $color-grey-light;
   opacity: 1;
 }
 
 input::-moz-placeholder {
   @include font-main;
-  font-size: $font-XL;
+  font-size: $font-L;
   color: $color-grey-light;
   opacity: 1;
 }
 
 input:-moz-placeholder {
   @include font-main;
-  font-size: $font-XL;
+  font-size: $font-L;
   color: $color-grey-light;
   opacity: 1;
 }
 
 input:-ms-input-placeholder {
   @include font-main;
-  font-size: $font-XL;
+  font-size: $font-L;
   color: $color-grey-light;
   opacity: 1;
 }
@@ -139,7 +139,7 @@ section {
   line-height: 1;
   @include font-decor-bold;
   color: #fff;
-  font-size: $font-XL;
+  font-size: $font-L;
 
   &.button-white {
     background: #fff;
@@ -173,6 +173,11 @@ section {
 
   }
 
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
 @media(max-width: 1199px) {

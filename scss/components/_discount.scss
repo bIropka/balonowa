@@ -3,7 +3,126 @@
 **********************************************/
 
 .discount {
+  width: 100%;
+  margin: 80px 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px 65px 400px;
+  text-align: left;
 
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, $color-crimson, $color-crimson-light);
+    z-index: -1;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  h2 {
+    text-align: left;
+    @include font-decor-light;
+    color: $color-grey;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 25px;
+
+    span {
+      display: block;
+      @include font-decor-bold;
+      color: inherit;
+      margin: 10px 0 0 0;
+    }
+
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: auto;
+  }
+
+}
+
+.discount-note {
+  position: absolute;
+  z-index: 1;
+  right: 50px;
+  bottom: 50px;
+  color: $color-grey;
+  font-size: $font-L;
+}
+
+.discount-image {
+  width: 202px;
+  z-index: 1;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-animation-name: buzz;
+  animation-name: buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.discount:hover {
+
+  .discount-image {
+    -webkit-animation-name: none;
+    animation-name: none;
+  }
+
+}
+
+@-webkit-keyframes buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
 }
 
 @media(max-width: 1199px) {
@@ -11,6 +130,31 @@
 }
 
 @media(max-width: 991px) {
+
+  .discount {
+    margin: 40px 0 0;
+    padding: 30px 20px;
+    text-align: center;
+
+    h2 {
+      text-align: center;
+    }
+
+  }
+
+  .discount-image {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto 25px;
+  }
+
+  .discount-note {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 20px 0 0;
+  }
 
 }
 
