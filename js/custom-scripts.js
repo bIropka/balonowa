@@ -66,5 +66,18 @@ $(window).ready(function() {
 
     // end of products
 
+    /*******************************************
+     ******************* sliders
+     ********************************************/
+
+    $('.slider-clients').slick({
+        appendArrows: '.clients-control',
+        prevArrow: '.clients-control-prev',
+        nextArrow: '.clients-control-next',
+        slidesToShow: 3
+    });
+
+    // end of sliders
+
 });
 

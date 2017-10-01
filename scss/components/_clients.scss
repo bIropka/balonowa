@@ -4,6 +4,78 @@
 
 .clients {
 
+  h2 {
+    color: $color-grey;
+    text-align: left;
+    margin: 0 0 10px;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+}
+
+.slider-clients {
+  width: calc(100% + 30px);
+  margin: 0 -15px;
+
+  .slide {
+    margin: 0 15px;
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+}
+
+.clients-header {
+  @include font-decor-light;
+  padding: 0 0 0 35px;
+  height: 100%;
+  border-left: 3px solid $color-yellow;
+}
+
+.clients-control {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: $color-yellow;
+  box-shadow: 0 0 0 3px $color-yellow;
+  cursor: pointer;
+
+  i {
+    font-size: $font-XL;
+    color: inherit;
+    transition: .4s;
+  }
+
+  &.clients-control-prev {
+    padding: 0 3px 0 0;
+    margin: 0 15px 0 0;
+  }
+
+  &.clients-control-next {
+    padding: 0 0 0 3px;
+  }
+
+  &:hover {
+    background: #fff;
+    color: $color-yellow;
+  }
+
+  &:active {
+    color: #000;
+  }
+
 }
 
 @media(max-width: 1199px) {

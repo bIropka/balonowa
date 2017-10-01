@@ -34,6 +34,9 @@ button {
   border: none;
 }
 
+.slider-wrapper .slide:hover,
+.slider-wrapper .slide:active,
+.slider-wrapper .slide:focus,
 a:hover,
 a:active,
 a:focus,
@@ -107,6 +110,7 @@ main {
   display: block;
   width: 100%;
   flex-grow: 1;
+  background: url(../images/background-reviews.jpg) no-repeat center bottom;
 }
 
 h1 {
