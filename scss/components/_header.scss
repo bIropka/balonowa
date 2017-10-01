@@ -61,8 +61,8 @@ header[role='banner'] {
     @include font-decor-bold;
 
     &:hover {
-      color: $color-blue-dark;
-      text-shadow: 0 0 1px $color-blue-dark;
+      color: $color-blue-medium;
+      text-shadow: 0 0 1px $color-blue-medium;
     }
 
   }

@@ -4,6 +4,33 @@
 
 .advantages {
 
+  h3 {
+    @include font-decor-bold;
+    font-size: $font-title-small;
+    color: $color-blue-medium;
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: $font-S;
+    line-height: 27px;
+    padding: 0 10px;
+  }
+
+}
+
+.advantage-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+  }
+
 }
 
 @media(max-width: 1199px) {

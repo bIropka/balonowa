@@ -8,6 +8,7 @@
   padding: 0;
   @include font-main;
   line-height: 1;
+  color: $color-text-dark;
 }
 
 a,
@@ -115,8 +116,58 @@ h1 {
   line-height: 83px;
 }
 
+h2 {
+  @include font-decor;
+  font-size: $font-title-medium;
+  color: $color-crimson;
+  text-align: center;
+  margin: 0 0 65px;
+}
+
 section {
   padding: 100px 0;
+}
+
+.button {
+  display: block;
+  padding: .5em 1.5em;
+  border-radius: 2em;
+  line-height: 1;
+  @include font-decor-bold;
+  color: #fff;
+  font-size: $font-XL;
+
+  &.button-white {
+    background: #fff;
+    color: $color-crimson;
+    border: 2px solid $color-light;
+
+    &:hover {
+      background: $color-light;
+    }
+
+  }
+
+  &.button-crimson {
+    background: linear-gradient(to right, $color-crimson, $color-crimson-light);
+
+    &:hover {
+      background: linear-gradient(to left, $color-crimson, $color-crimson-light);
+    }
+
+  }
+
+  &.button-yellow {
+    background: $color-yellow;
+    border: 2px solid $color-yellow;
+
+    &:hover {
+      background: #fff;
+      color: $color-yellow;
+    }
+
+  }
+
 }
 
 @media(max-width: 1199px) {

@@ -5,7 +5,7 @@
 .top-main {
   background: url(../images/background-top.jpg) no-repeat left top;
   background-size: cover;
-  padding: 200px 0 180px;
+  padding: 200px 0;
   overflow: hidden;
   position: relative;
 }
@@ -55,6 +55,18 @@
   left: calc(50% - 1000px)!important;
   bottom: -225px!important;
   top: auto!important;
+  right: auto!important;
+}
+
+.decor-baloons {
+  width: 347px;
+  height: 539px;
+  background: url(../images/image-baloons.png) no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 1320px!important;
+  bottom: auto!important;
+  top: 140px!important;
   right: auto!important;
 }
 
