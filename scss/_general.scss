@@ -15,11 +15,11 @@ a,
 button {
   transition: .4s;
   cursor: pointer;
+}
 
-  &:hover {
-    text-decoration: none;
-  }
-
+a:hover {
+  text-decoration: none;
+  color: $color-blue-medium;
 }
 
 img {

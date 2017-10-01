@@ -88,12 +88,17 @@
 
 @media(max-width: 991px) {
 
+  .clients {
+    padding-bottom: 0;
+  }
+
 }
 
 @media(max-width: 767px) {
 
   .clients {
     text-align: center;
+    padding-bottom: 50px;
 
     h2 {
       text-align: inherit;
