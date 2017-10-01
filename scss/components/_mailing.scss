@@ -3,6 +3,59 @@
 **********************************************/
 
 .mailing {
+  background: linear-gradient(to right, $color-crimson, $color-crimson-light);
+
+  h2 {
+    @include font-decor-bold;
+    color: #fff;
+    margin: 0 0 35px;
+  }
+
+}
+
+.form-mailing {
+
+  label {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    input {
+      display: block;
+      width: 100%;
+      height: 44px;
+      background: #fff;
+      border: none;
+      border-radius: 22px;
+      padding: 0 0 0 70px;
+      transition: .4s;
+    }
+
+    i {
+      font-size: $font-title-small;
+      color: $color-grey-light;
+      position: absolute;
+      margin: auto;
+      top: 6px;
+      bottom: 0;
+      left: 25px;
+    }
+
+    input:focus {
+      padding: 0 0 0 40px;
+
+      & + i {
+        opacity: 0;
+      }
+
+    }
+
+  }
+
+  button[type='submit'] {
+    padding: .5em 0;
+    width: 100%;
+  }
 
 }
 
@@ -15,6 +68,10 @@
 }
 
 @media(max-width: 767px) {
+
+  button[type='submit'] {
+    margin: 15px 0 0 0;
+  }
 
 }
 

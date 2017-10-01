@@ -140,7 +140,7 @@ section {
   &.button-white {
     background: #fff;
     color: $color-crimson;
-    border: 2px solid $color-light;
+    box-shadow: 0 0 0 2px $color-light;
 
     &:hover {
       background: $color-light;
@@ -159,7 +159,8 @@ section {
 
   &.button-yellow {
     background: $color-yellow;
-    border: 2px solid $color-yellow;
+    box-shadow: 0 0 0 2px $color-yellow;
+
 
     &:hover {
       background: #fff;
@@ -179,6 +180,22 @@ section {
 }
 
 @media(max-width: 767px) {
+
+  section {
+    padding: 50px 0;
+  }
+
+  h1 {
+    @include font-decor-bold;
+    font-size: $font-title-medium;
+    line-height: 52px;
+  }
+
+  h2 {
+    @include font-decor;
+    font-size: $font-title-small;
+    margin: 0 0 40px;
+  }
 
 }
 
