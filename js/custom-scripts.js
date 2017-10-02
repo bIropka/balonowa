@@ -112,6 +112,7 @@ $(window).ready(function() {
 
     $('form').validatr({
         showall: true,
+        template: "<div>Error!!!</div>",
         valid: function() {
 
             var formID = $(this).attr('id');

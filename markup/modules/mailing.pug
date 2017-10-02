@@ -10,7 +10,7 @@ section.mailing
                     .row
                         div(class='col-12 col-md-8')
                             label
-                                input(type='email' name='mailing-email' id='mailing-email' placeholder='Wpisz swój e-mail' required)
+                                input(type='email' name='mailing-email' id='mailing-email' pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='Wpisz swój e-mail' required)
                                 i(class='fa fa-envelope-o')
                         div(class='col-12 col-md-4')
                             button(type='submit' class='button button-yellow') Zapisz się

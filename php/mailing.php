@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['mailing-email'])) {$email = $_POST['mailing-email'];}
 	if (isset($_POST['formData'])) {$formData = $_POST['formData'];}
 
-	$to = "biropka@gmail.com";
+	$to = "mirrexx777@gmail.com";
 	$sendfrom   = "baloonowa";
 	$headers  = "From: " . strip_tags($sendfrom) . "\r\n";
 	$headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";

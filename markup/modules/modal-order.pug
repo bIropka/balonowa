@@ -17,13 +17,13 @@ div(class='modal modal-order')
                 .modal-product-cost-value
                     != '<span>110</span>zł'
         label
-            input(type='text' name='order-name' id='order-name' placeholder='Imję i Nazwisko' required)
+            input(type='text' name='order-name' id='order-name' placeholder='Imję i Nazwisko' pattern='^[a-zA-Z]+$' required)
             i(class='fa fa-user')
         label
-            input(type='phone' name='order-phone' id='order-phone' placeholder='Telefon' required)
+            input(type='tel' name='order-phone' id='order-phone' placeholder='Telefon' pattern='[0-9]{5,11}' required)
             i(class='fa fa-phone')
         label
-            input(type='email' name='order-email' id='order-email' placeholder='E-mail' required)
+            input(type='email' name='order-email' id='order-email' placeholder='E-mail' pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' required)
             i(class='fa fa-envelope-o')
         fieldset
             input(type='radio' name='order-delivery' id='order-delivery-true' checked)

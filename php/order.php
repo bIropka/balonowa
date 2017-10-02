@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['order-cost'])) {$cost = $_POST['order-cost'];}
 	if (isset($_POST['formData'])) {$formData = $_POST['formData'];}
 
-	$toAdmin = "info@balonowabajka.pl";
-	$toClient = "info@balonowabajka.pl";
+	$toAdmin = "mirrexx777@gmail.com";
+	$toClient = "mirrexx777@gmail.com";
 	$sendfrom   = "baloonowa";
 	$headers  = "From: " . strip_tags($sendfrom) . "\r\n";
 	$headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";

@@ -351,6 +351,11 @@ button[type='submit'] {
       margin: 0 0 20px;
     }
 
+    button[type='submit'] {
+      float: none;
+      margin: 0 0 0 30px;
+    }
+
   }
 
   .modal-product-image {
@@ -379,11 +384,6 @@ button[type='submit'] {
   .modal-result-summa {
     float: none;
     margin: 10px 0 20px 30px;
-  }
-
-  button[type='submit'] {
-    float: none;
-    margin: 0 0 0 30px;
   }
 
   .modal-result:after {
