@@ -1,0 +1,83 @@
+/*********************************************
+*********** contacts
+**********************************************/
+
+.contacts {
+  background: $color-light;
+  padding: 70px 0;
+
+  h2 {
+    margin: 0 0 30px;
+    text-align: left;
+  }
+
+}
+
+.contacts-email,
+.contacts-phone,
+.contacts-address {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 50px;
+  color: $color-blue-medium;
+  margin: 10px 0;
+  font-style: normal;
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: $font-title-small;
+    color: inherit;
+  }
+
+  span {
+    font-size: $font-XXL;
+    color: inherit;
+    line-height: 1.2;
+  }
+
+}
+
+.on-map {
+  display: block;
+  width: 100%;
+  height: 350px;
+  margin: 50px 0 0;
+}
+
+@media(max-width: 991px) {
+
+}
+
+@media(max-width: 767px) {
+
+  .contacts {
+    background: $color-light;
+    padding: 70px 0;
+  }
+
+  .contacts-email,
+  .contacts-phone,
+  .contacts-address {
+
+    i {
+      top: 1px;
+      font-size: $font-XXL;
+    }
+
+    span {
+      font-size: $font-L;
+    }
+
+  }
+
+  .on-map {
+    height: 250px;
+  }
+
+}
+
+@media(max-width: 480px) {
+
+}
