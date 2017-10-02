@@ -189,13 +189,13 @@ $(window).ready(function() {
             $('.modal-result-summa-value span').text(resultCost + deliveryCost);
             $('#order-cost').val(resultCost + deliveryCost);
             document.getElementById('order-address').required = true;
+            $('#order-address').val('');
         } else {
             $('.modal-result-summa-value span').text(resultCost - deliveryCost);
             $('#order-cost').val(resultCost - deliveryCost);
             document.getElementById('order-address').required = false;
+            $('#order-address').val('Odbior osobisty');
         }
-
-
 
     });
 

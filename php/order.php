@@ -1,22 +1,15 @@
 <?php
-$email = 'empty';
-$name = 'empty';
-$phone = 'empty';
-$product = 'empty';
-$delivery = 'Odbior osobisty';
-$cost = 'empty';
-$formData = 'empty';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['order-email'])) {$email = $_POST['order-email'];}
 	if (isset($_POST['order-name'])) {$name = $_POST['order-name'];}
 	if (isset($_POST['order-phone'])) {$phone = $_POST['order-phone'];}
 	if (isset($_POST['order-product'])) {$product = $_POST['order-product'];}
-	if (isset($_POST['order-delivery'])) {$delivery = $_POST['order-delivery'];}
+	if (isset($_POST['order-address'])) {$delivery = $_POST['order-address'];}
 	if (isset($_POST['order-cost'])) {$cost = $_POST['order-cost'];}
 	if (isset($_POST['formData'])) {$formData = $_POST['formData'];}
 
-	$toAdmin = "biropka@gmail.com";
-	$toClient = "st.linden.11@gmail.com";
+	$toAdmin = "info@balonowabajka.pl";
+	$toClient = "info@balonowabajka.pl";
 	$sendfrom   = "baloonowa";
 	$headers  = "From: " . strip_tags($sendfrom) . "\r\n";
 	$headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";
@@ -60,11 +53,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				    Dzień dobry!<br>
 				    Dziękujemy za zamówienie <b>$product</b>.<br>
 				    Aby zrealizować zamówienie, prosimy o dokonaniu przelewu:
-				    <b>NR Konta:</b> 12 2325 5132 1564 65498 54<br>
-				    <b>Nazwa odbiorcy:</b>  OLOKA Sp. z o. o.<br>
-				    <b>05-110 Jablonna ul. Lesna 17 D/7</b><br>
-				    <b>Do zapłaty:</b> $cost Zł<br>
-				    <b>Tytuł:</b> Zamówienie nr $number<br>
+				    <table>
+				    	<tr>
+				    		<td><b>NR Konta:</b></td>
+				    		<td>12 2325 5132 1564 65498 54</td>
+						</tr>
+				    	<tr>
+				    		<td><b>Nazwa odbiorcy:</b></td>
+				    		<td>OLOKA Sp. z o. o.</td>
+						</tr>
+				    	<tr>
+				    		<td colspan='2'><b>05-110 Jablonna ul. Lesna 17 D/7</b></td>
+						</tr>
+				    	<tr>
+				    		<td><b>Do zapłaty:</b></td>
+				    		<td>$cost Zł</td>
+						</tr>
+				    	<tr>
+				    		<td><b>Tytuł:</b></td>
+				    		<td>Zamówienie nr $number</td>
+						</tr>
+					</table>
+				    <br>
 				    W razie pytań, prosimy dzwonić pod numer <b><a href='tel:+48575150487'>+48575150487</a></b>";
 
 	$sendAdmin = mail ($toAdmin, $subject, $messageAdmin, $headers);
