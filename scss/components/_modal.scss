@@ -16,7 +16,7 @@
   z-index: 10003;
 
   &.modal-order {
-    display: flex;
+    display: none;
     align-items: flex-start;
 
     .modal-inner {
@@ -281,6 +281,10 @@ button[type='submit'] {
     color: $color-blue-medium;
   }
 
+}
+
+.hidden-input {
+  display: none;
 }
 
 @media(max-width: 767px) {

@@ -1,5 +1,7 @@
 div(class='modal modal-order')
     form(action='php/order.php' class='modal-inner' id='form-order')
+        input(class='hidden-input' name='order-cost' id='order-cost')
+        input(class='hidden-input' name='order-product' id='order-product')
         i(class='fa fa-close close-modal')
         .modal-product-image
             img(src='images/image-product-1.jpg' alt='product')

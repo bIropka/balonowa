@@ -136,6 +136,13 @@ $(window).ready(function() {
         }
     });
 
+    $('.product-to-order').click(function() {
+        var image = $(this).siblings('.product-image').find('img').clone();
+        var name = $(this).siblings('h3').find('a').text();
+        var cost = $(this).siblings('.product-cost').find('span').text();
+        createModalOrder(image, name, cost);
+    });
+
     $('.modal').click(function (event) {
         var target = $(event.target);
         if (!target.closest($('.modal-inner')).length) {
@@ -145,6 +152,68 @@ $(window).ready(function() {
             $('.modal').fadeOut();
         }
     });
+
+    $('.modal-product-amount i').click(function() {
+        var counter = parseInt($(this).siblings('.modal-product-amount-value').text());
+        var cost = parseInt($('.modal-product-cost-value span').text()) / counter;
+        var deliveryCost;
+
+        if(document.getElementById('order-delivery-true').checked) {
+            deliveryCost = parseInt($('.modal-delivery-cost-value span').text());
+        } else {
+            deliveryCost = 0;
+        }
+
+        if($(this).hasClass('modal-product-amount-minus')) {
+            if(counter > 1) {
+                $(this).siblings('.modal-product-amount-value').text(--counter);
+            }
+        } else {
+            $(this).siblings('.modal-product-amount-value').text(++counter);
+        }
+
+        $('.modal-product-cost-value span').text(cost * counter);
+
+        $('.modal-result-summa-value span').text(cost * counter + deliveryCost);
+
+        $('#order-cost').val(cost * counter + deliveryCost);
+
+    });
+
+    $('.modal-order input[type="radio"]').change(function() {
+
+        var deliveryCost = parseInt($('.modal-delivery-cost-value span').text());
+        var resultCost = parseInt($('.modal-result-summa-value span').text());
+
+        if(document.getElementById('order-delivery-true').checked) {
+            $('.modal-result-summa-value span').text(resultCost + deliveryCost);
+            $('#order-cost').val(resultCost + deliveryCost);
+            document.getElementById('order-address').required = true;
+        } else {
+            $('.modal-result-summa-value span').text(resultCost - deliveryCost);
+            $('#order-cost').val(resultCost - deliveryCost);
+            document.getElementById('order-address').required = false;
+        }
+
+
+
+    });
+
+    function createModalOrder(img, name, cost) {
+
+        var deliveryCost = parseInt($('.modal-delivery-cost-value span').text());
+
+        $('.modal-product-image').html($(img));
+        $('.modal-order h2').html(name);
+        $('.modal-product-cost-value span').html(cost);
+        $('.modal-product-amount-value').text(1);
+        $('.modal-result-summa-value span').text(parseInt(cost) + deliveryCost);
+        $('#order-product').val(name);
+        $('#order-cost').val(parseInt(cost) + deliveryCost);
+
+        $('.modal-order').fadeIn().css('display', 'flex');
+
+    }
 
     // end of forms
 
