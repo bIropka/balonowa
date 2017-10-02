@@ -10,11 +10,27 @@ header[role='banner'] {
   left: 0;
   top: 0;
   z-index: 1;
+  transition: .6s;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .logo {
   display: block;
-  width: 212px;
+  height: 130px;
+  transition: .6s;
+  order: 1;
+
+  img {
+    width: auto;
+    height: 100%;
+    transition: .6s;
+  }
 
   &:hover {
     opacity: 0.7;
@@ -25,6 +41,7 @@ header[role='banner'] {
 .phone {
   padding: 0 0 0 50px;
   position: relative;
+  order: 3;
 
   &:hover {
 
@@ -78,11 +95,51 @@ header[role='banner'] {
 
 }
 
+header[role='banner'].fixed {
+  position: fixed;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, .5);
+
+  .logo {
+    height: 70px;
+  }
+
+}
+
+nav {
+  order: 2;
+}
+
+.burger {
+  display: none;
+  order: 4;
+}
+
 @media(max-width: 1199px) {
 
 }
 
 @media(max-width: 991px) {
+
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .phone {
+    order: 2;
+  }
+
+  .burger {
+    order: 3;
+  }
+
+  nav {
+    order: 4;
+  }
 
 }
 

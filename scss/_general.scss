@@ -17,9 +17,14 @@ button {
   cursor: pointer;
 }
 
-a:hover {
+a {
   text-decoration: none;
-  color: $color-blue-medium;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-blue-medium;
+  }
+
 }
 
 img {

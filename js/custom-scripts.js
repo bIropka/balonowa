@@ -5,7 +5,7 @@ $(window).ready(function() {
     }, 500);
 
     /*******************************************
-    ****************** top parallax
+    ****************** top parallax and header
     *******************************************/
 
     var scene = document.getElementById('scene');
@@ -14,42 +14,82 @@ $(window).ready(function() {
 
     if($(window).width() < 1200) {
         parallaxInstance.disable();
+        $('header[role="banner"]').addClass('fixed');
+
     } else {
         parallaxInstance.enable();
+        $('header[role="banner"]').removeClass('fixed');
+    }
+
+    if($(window).scrollTop() > 50) {
+        $('header[role="banner"]').addClass('fixed');
+
+    } else if($(window).width() > 1199) {
+        $('header[role="banner"]').removeClass('fixed');
+    }
+
+    if($(window).width() < 480) {
+        $('.phone').appendTo('nav');
+    } else {
+        $('.phone').insertAfter('.logo');
     }
 
     $(window).resize(function() {
 
         if($(window).width() < 1200) {
             parallaxInstance.disable();
+            $('header[role="banner"]').addClass('fixed');
         } else {
             parallaxInstance.enable();
+            $('header[role="banner"]').removeClass('fixed');
+        }
+
+        if($(window).width() < 480) {
+            $('.phone').appendTo('nav');
+        } else {
+            $('.phone').insertAfter('.logo');
         }
 
     });
 
-    // end of top parallax
+    $(window).scroll(function() {
 
-    /*******************************************
-    ******************* products
-    ********************************************/
+        if($(window).scrollTop() > 50) {
+            $('header[role="banner"]').addClass('fixed');
 
-    changeCategory();
+        } else if($(window).width() > 1199) {
+            $('header[role="banner"]').removeClass('fixed');
+        }
 
-    $('.product-filter-item').click(function() {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-        changeCategory();
     });
 
-    function changeCategory() {
-        var productCategories = $('.product-categories');
-        var categoryIndex = $('.product-filter').find('.active').attr('data-category');
-        $(productCategories).find('.active').removeClass('active');
-        $(productCategories).find('[data-category="' + categoryIndex + '"]').addClass('active');
-    }
+    $('.burger').click(function() {
 
-    $('.product-categories').on('click', '#preview-img-modal', function() {
+        $(this).toggleClass('active');
+
+        if($(this).hasClass('active')) {
+            $(this).siblings('nav').slideDown().css('display', 'flex');
+        } else {
+            $(this).siblings('nav').slideUp();
+        }
+
+    });
+
+    $('a[href^="#"]').click(function(){
+
+        var target = $(this).attr('href');
+
+        $('html, body').animate({scrollTop: $(target).offset().top}, 800);
+
+    });
+
+    // end of top parallax and header
+
+    /*******************************************
+     ******************* products preview
+     ********************************************/
+
+    $('.products').on('click', '#preview-img-modal', function() {
         $('#preview-img-modal').find('img').prependTo($('.product-image.active'));
         $('#preview-img-modal').fadeOut();
         setTimeout(function() {
@@ -59,59 +99,12 @@ $(window).ready(function() {
     });
 
     $('.product-to-preview').click(function() {
-        $('<div id="preview-img-modal"></div>').appendTo($('.product-categories')).fadeIn();
+        $('<div id="preview-img-modal"></div>').appendTo($('.products')).fadeIn();
         $(this).parents('.product-image').find('img').appendTo($('#preview-img-modal'));
         $(this).parents('.product-image').addClass('active');
     });
 
     // end of products
-
-    /*******************************************
-     ******************* sliders
-     ********************************************/
-
-    $('.slider-clients').slick({
-        appendArrows: '.clients-control',
-        prevArrow: '.clients-control-prev',
-        nextArrow: '.clients-control-next',
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-
-    $('.slider-reviews').slick({
-        arrows: false,
-        dots: true,
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-
-    // end of sliders
 
 });
 

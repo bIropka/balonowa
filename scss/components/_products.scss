@@ -4,6 +4,7 @@
 
 .products {
   background: $color-light;
+  padding-bottom: 70px;
 }
 
 .product-filter {
@@ -12,7 +13,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 70px;
-  margin: 0 0 25px;
 }
 
 .product-filter-item {
@@ -52,8 +52,8 @@
 .category {
   display: none;
 
-  &.active {
-    display: block;
+  .col-12 {
+    margin: 30px 0;
   }
 
 }
