@@ -102,6 +102,13 @@
   position: absolute;
   left: 25px;
   top: 25px;
+
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+
 }
 
 .product-label {

@@ -1,0 +1,54 @@
+div(class='modal modal-order')
+    form(action='php/order.php' class='modal-inner' id='form-order')
+        i(class='fa fa-close close-modal')
+        .modal-product-image
+            img(src='images/image-product-1.jpg' alt='product')
+        .modal-product-controls
+            h2 Name 1
+            .modal-product-amount
+                .modal-product-amount-title lość:
+                i(class='fa fa-minus modal-product-amount-minus')
+                .modal-product-amount-value 1
+                i(class='fa fa-plus modal-product-amount-plus')
+            .modal-product-cost
+                .modal-product-cost-title Cena:
+                .modal-product-cost-value
+                    != '<span>110</span>zł'
+        label
+            input(type='text' name='order-name' id='order-name' placeholder='Imję i Nazwisko' required)
+            i(class='fa fa-user')
+        label
+            input(type='phone' name='order-phone' id='order-phone' placeholder='Telefon' required)
+            i(class='fa fa-phone')
+        label
+            input(type='email' name='order-email' id='order-email' placeholder='E-mail' required)
+            i(class='fa fa-envelope-o')
+        fieldset
+            input(type='radio' name='order-delivery' id='order-delivery-true' checked)
+            label(for='order-delivery-true')
+                i(class='fa fa-check-circle-o')
+                i(class='fa fa-circle-o')
+                span Dostawa na adres
+            .delivery-details
+                label
+                    input(type='text' name='order-address' id='order-address' placeholder='Adres dostawy' required)
+                    i(class='fa fa-home')
+                .modal-delivery-cost
+                    .modal-delivery-cost-title Koszt dostawy:
+                    .modal-delivery-cost-value
+                        != '<span>20</span>zł *'
+        fieldset.self-export
+            input(type='radio' name='order-delivery' id='order-delivery-false')
+            label(for='order-delivery-false')
+                i(class='fa fa-check-circle-o')
+                i(class='fa fa-circle-o')
+                span Odbior osobisty
+            a(href='page-contacts.html' class='modal-to-contacts') Gdzie odebrać?
+        fieldset.modal-result
+            .modal-result-summa
+                .modal-result-summa-title Razem:
+                .modal-result-summa-value
+                    != '<span>25</span>zł'
+            button(type='submit' class='button button-yellow') Zamów
+        .order-note
+            p * Koszt dostawy zależy od odległości do punktu docelowego. Dostawa będzie realizowana z naszego punktu odbioru przy ulicę Jerzego Siwińskiego 2, 05-120 Legionowo

@@ -106,5 +106,47 @@ $(window).ready(function() {
 
     // end of products
 
+    /*******************************************
+     ******************* forms
+     ********************************************/
+
+    $('form').validatr({
+        showall: true,
+        valid: function() {
+
+            var formID = $(this).attr('id');
+
+            var formNm = $('#' + formID);
+            var scriptFile;
+            if (formID === 'form-mailing') scriptFile = 'php/mailing.php';
+            if (formID === 'form-order') scriptFile = 'php/order.php';
+            $.ajax({
+                type: "POST",
+                url: scriptFile,
+                data: formNm.serialize(),
+                success: function (data) {
+                    $(location).attr('href', 'page-thanks.html');
+                },
+                error: function (data) {
+                    $('.modal').fadeOut();
+                    $('.modal-error').fadeIn().css('display', 'flex');
+                }
+            });
+            return false;
+        }
+    });
+
+    $('.modal').click(function (event) {
+        var target = $(event.target);
+        if (!target.closest($('.modal-inner')).length) {
+            $('.modal').fadeOut();
+        }
+        if (target.hasClass('close-modal')){
+            $('.modal').fadeOut();
+        }
+    });
+
+    // end of forms
+
 });
 

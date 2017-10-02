@@ -1,0 +1,402 @@
+/*********************************************
+*********** modal
+**********************************************/
+
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background: rgba(0, 0, 0, .4);
+  z-index: 10003;
+
+  &.modal-order {
+    display: flex;
+    align-items: flex-start;
+
+    .modal-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      width: 570px;
+      margin: 100px 0 20px;
+    }
+
+    label {
+      margin: 0 0 30px;
+    }
+
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  input[type='radio'] + label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: static;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 15px;
+
+    i {
+      position: static;
+      font-size: $font-L;
+      margin: 0 30px;
+      color: $color-yellow;
+    }
+
+    .fa-check-circle-o {
+      display: none;
+    }
+
+    .fa-circle-o {
+      display: block;
+    }
+
+  }
+
+  .delivery-details {
+    display: none;
+  }
+
+  input[type='radio']:checked + label {
+
+    .fa-check-circle-o {
+      display: block;
+    }
+
+    .fa-circle-o {
+      display: none;
+    }
+
+    & + .delivery-details {
+      display: block;
+    }
+
+  }
+
+}
+
+.modal-inner {
+  display: block;
+  padding: 50px 70px;
+  background: #fff;
+  color: $color-blue-medium;
+  box-shadow: 0 0 0 10px rgba(46, 154, 215, .5);
+  position: relative;
+
+  label {
+    width: 100%;
+    box-shadow: 0 0 0 2px $color-light;
+  }
+
+  h2 {
+    @include font-decor-bold;
+    font-size: $font-XL;
+    color: $color-text-dark;
+    line-height: 1;
+    margin: 10px 0 30px;
+    text-align: left;
+  }
+
+  h3 {
+    @include font-decor-bold;
+    font-size: $font-title-small;
+    color: $color-blue-medium;
+    text-transform: uppercase;
+  }
+
+}
+
+.modal-product-image {
+  width: 100%;
+  max-width: 130px;
+  margin: 0 0 45px;
+}
+
+.modal-product-controls {
+  width: calc(100% - 170px);
+  margin: 0 0 45px;
+}
+
+.modal-product-amount {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.modal-product-amount-title {
+  font-size: $font-S;
+  margin: 0 25px 0 0;
+}
+
+.modal-product-amount-minus,
+.modal-product-amount-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  line-height: 27px;
+  background: $color-yellow;
+  box-shadow: inset 0 0 0 1px $color-yellow;
+  color: #fff;
+  font-size: $font-S;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .4s;
+  flex-shrink: 0;
+
+  &:hover {
+    background: #fff;
+    color: $color-yellow;
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+
+}
+
+.modal-product-amount-value {
+  width: 20px;
+  text-align: center;
+  font-size: $font-S;
+  @include font-main-bold;
+  margin: 0 10px;
+}
+
+.modal-product-cost,
+.modal-delivery-cost,
+.modal-result-summa {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 15px;
+}
+
+.modal-delivery-cost,
+.modal-result-summa {
+  margin: 0 0 15px 30px;
+}
+
+.modal-product-cost-title,
+.modal-delivery-cost-title,
+.modal-result-summa-title {
+  font-size: $font-S;
+  line-height: $font-L;
+  margin: 0 15px 0 0;
+}
+
+.modal-product-cost-value,
+.modal-delivery-cost-value,
+.modal-result-summa-value {
+  @include font-decor-bold;
+  font-size: $font-L;
+}
+
+.self-export {
+  margin: 0 0 30px;
+
+  label {
+    float: left;
+    width: auto;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+
+}
+
+.modal-result-summa {
+  float: left;
+  margin: 10px 0 0 30px;
+}
+
+button[type='submit'] {
+  float: right;
+}
+
+.modal-result:after {
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+.modal-to-contacts {
+  float: right;
+  color: $color-yellow;
+  text-decoration: underline;
+  margin: 5px 0 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
+.order-note {
+  margin: 30px 0 0;
+
+  p {
+    font-size: $font-XXS;
+    line-height: 20px;
+    color: $color-text-light;
+  }
+
+}
+
+.close-modal {
+  display: block;
+  font-size: $font-title-small;
+  color: #fff;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  right: -50px;
+  top: -10px;
+  transition: .6s;
+  transform-origin: center center;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  &:active {
+    color: $color-blue-medium;
+  }
+
+}
+
+@media(max-width: 767px) {
+
+  .close-modal {
+    right: 10px;
+    top: 10px;
+    color: $color-blue-medium;
+  }
+
+  .modal.modal-order {
+
+    .modal-inner {
+      width: 320px;
+      padding: 40px 20px 20px;
+      margin: 40px 0 20px;
+    }
+
+    input::-webkit-input-placeholder {
+      @include font-main;
+      font-size: $font-S;
+      color: $color-grey-light;
+      opacity: 1;
+    }
+
+    input::-moz-placeholder {
+      @include font-main;
+      font-size: $font-S;
+      color: $color-grey-light;
+      opacity: 1;
+    }
+
+    input:-moz-placeholder {
+      @include font-main;
+      font-size: $font-S;
+      color: $color-grey-light;
+      opacity: 1;
+    }
+
+    input:-ms-input-placeholder {
+      @include font-main;
+      font-size: $font-S;
+      color: $color-grey-light;
+      opacity: 1;
+    }
+
+    input:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    input:focus::-moz-placeholder {
+      color: transparent;
+    }
+
+    input:focus:-moz-placeholder {
+      color: transparent;
+    }
+
+    input:focus:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    label {
+      margin: 0 0 20px;
+    }
+
+  }
+
+  .modal-product-image {
+    max-width: 80px;
+    margin: 0 0 20px;
+  }
+
+  .modal-product-controls {
+    width: calc(100% - 100px);
+    margin: 0 0 20px;
+  }
+
+  .self-export {
+    margin: 0 0 20px;
+
+    label {
+      float: none;
+    }
+
+    &:after {
+      display: none;
+    }
+
+  }
+
+  .modal-result-summa {
+    float: none;
+    margin: 10px 0 20px 30px;
+  }
+
+  button[type='submit'] {
+    float: none;
+    margin: 0 0 0 30px;
+  }
+
+  .modal-result:after {
+    display: none;
+  }
+
+  .modal-to-contacts {
+    float: none;
+    margin: 0 0 0 30px;
+  }
+
+  .order-note {
+    text-align: justify;
+  }
+
+}
+
+@media(max-width: 480px) {
+
+}
