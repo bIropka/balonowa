@@ -9,6 +9,15 @@
   overflow: hidden;
   position: relative;
   text-align: center;
+
+  h1,
+  h4 {
+    left: auto!important;
+    top: auto!important;
+    bottom: auto!important;
+    right: auto!important;
+  }
+
 }
 
 .decor-cloud {
@@ -75,6 +84,14 @@
   position: relative;
   text-align: center;
 
+  h1,
+  h4 {
+    left: auto!important;
+    top: auto!important;
+    bottom: auto!important;
+    right: auto!important;
+  }
+
   .decor-cloud {
 
     &:nth-of-type(2) {
@@ -85,10 +102,26 @@
 
 }
 
+.top-thanks {
+  padding: 200px 0 275px;
+}
+
+.thanks-note {
+  position: relative!important;
+  margin: 20px 0 0;
+  font-size: $font-L;
+  @include font-decor-bold;
+  color: #fff;
+}
+
 @media(max-width: 767px) {
 
   .top-main {
     padding: 175px 0;
+  }
+
+  .top-thanks {
+    padding: 150px 0 120px;
   }
 
 }
