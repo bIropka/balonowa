@@ -1,0 +1,86 @@
+/*********************************************
+*********** product-single
+**********************************************/
+
+.product-single {
+  padding: 100px 0 80px;
+
+  h2 {
+    text-align: left;
+    margin: 0 0 25px;
+  }
+
+  p {
+    margin: 20px 0;
+    font-size: $font-S;
+    line-height: 24px;
+    text-align: justify;
+  }
+
+  .product-to-order {
+    display: inline-block;
+    vertical-align: middle;
+    position: static;
+    margin: 0 0 20px;
+  }
+
+}
+
+.product-single-image {
+  border: 2px solid $color-light;
+  box-shadow: 0 0 35px 0 rgba(0, 0, 0, .15);
+  border-radius: 5px;
+  padding: 15px 30px;
+
+  &:hover {
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, .25);
+  }
+
+}
+
+.product-single-cost {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 35px 20px 0;
+}
+
+.product-single-cost-title {
+  display: inline-block;
+  vertical-align: middle;
+  @include font-main-bold;
+  font-size: $font-S;
+  margin: 0 15px 0 0;
+}
+
+.product-single-cost-value {
+  display: inline-block;
+  vertical-align: middle;
+  @include font-main-bold;
+  font-size: $font-XXL;
+  color: $color-brown;
+}
+
+@media(max-width: 1200px) {
+
+}
+
+@media(max-width: 980px) {
+
+}
+
+@media(max-width: 768px) {
+
+  .product-single-image {
+    max-width: 300px;
+    margin: 0 0 30px;
+  }
+
+  .product-single {
+    padding: 50px 0 35px;
+  }
+
+}
+
+@media(max-width: 480px) {
+
+}

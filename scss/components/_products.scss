@@ -203,6 +203,23 @@
   bottom: -22px;
 }
 
+.products-short {
+
+  h2 {
+    margin: 0 0 30px;
+  }
+
+  .row:last-of-type {
+
+    .col-12 {
+      margin: 30px 0;
+    }
+
+  }
+
+
+}
+
 @media(max-width: 991px) {
 
   .product-filter {
@@ -216,6 +233,10 @@
 }
 
 @media(max-width: 767px) {
+
+  .products-short {
+    padding: 50px 0;
+  }
 
   #preview-img-modal {
 
