@@ -53,12 +53,11 @@
 }
 
 .decor-clouds-bottom {
-  width: 2000px;
-  height: 415px;
+  width: 1920px;
+  height: 398px;
   background: url(../images/background-clouds.png) no-repeat 0 0;
-  background-size: 100% 100%;
   position: absolute;
-  left: calc(50% - 1000px)!important;
+  left: 0!important;
   bottom: -225px!important;
   top: auto!important;
   right: auto!important;
@@ -84,14 +83,6 @@
   position: relative;
   text-align: center;
 
-  h1,
-  h4 {
-    left: auto!important;
-    top: auto!important;
-    bottom: auto!important;
-    right: auto!important;
-  }
-
   .decor-cloud {
 
     &:nth-of-type(2) {
@@ -112,6 +103,17 @@
   font-size: $font-L;
   @include font-decor-bold;
   color: #fff;
+}
+
+@media(max-width: 1600px) {
+
+  .decor-baloons {
+    width: 258px;
+    height: 400px;
+    left: 1100px!important;
+    top: 200px!important;
+  }
+
 }
 
 @media(max-width: 767px) {

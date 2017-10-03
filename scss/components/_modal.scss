@@ -208,7 +208,6 @@
 }
 
 .self-export {
-  margin: 0 0 30px;
 
   label {
     float: left;
@@ -219,6 +218,18 @@
     content: '';
     display: block;
     width: 100%;
+  }
+
+}
+
+#error-message {
+  margin: 10px 0 10px 30px;
+  color: $color-crimson;
+  font-size: $font-L;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
   }
 
 }

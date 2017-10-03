@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	$toAdmin = "mirrexx777@gmail.com";
 	$toClient = "mirrexx777@gmail.com";
-	$sendfrom   = "baloonowa";
+	$sendfrom   = "info@balonowabajka.pl";
 	$headers  = "From: " . strip_tags($sendfrom) . "\r\n";
 	$headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";

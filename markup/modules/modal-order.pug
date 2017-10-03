@@ -17,13 +17,13 @@ div(class='modal modal-order')
                 .modal-product-cost-value
                     != '<span>110</span>zł'
         label
-            input(type='text' name='order-name' id='order-name' placeholder='Imję i Nazwisko' pattern='^[a-zA-Z]+$' required)
+            input(type='text' name='order-name' id='order-name' placeholder='Imję i Nazwisko' oninvalid='document.getElementById("error-message").className = "active"' required)
             i(class='fa fa-user')
         label
-            input(type='tel' name='order-phone' id='order-phone' placeholder='Telefon' pattern='[0-9]{5,11}' required)
+            input(type='tel' name='order-phone' id='order-phone' placeholder='Telefon' pattern='[0-9]{5,11}' oninvalid='document.getElementById("error-message").className = "active"' required)
             i(class='fa fa-phone')
         label
-            input(type='email' name='order-email' id='order-email' placeholder='E-mail' pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' required)
+            input(type='email' name='order-email' id='order-email' placeholder='E-mail' pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' oninvalid='document.getElementById("error-message").className = "active"' required)
             i(class='fa fa-envelope-o')
         fieldset
             input(type='radio' name='order-delivery' id='order-delivery-true' checked)
@@ -33,7 +33,7 @@ div(class='modal modal-order')
                 span Dostawa na adres
             .delivery-details
                 label
-                    input(type='text' name='order-address' id='order-address' placeholder='Adres dostawy' required)
+                    input(type='text' name='order-address' id='order-address' placeholder='Adres dostawy' oninvalid='document.getElementById("error-message").className = "active"' required)
                     i(class='fa fa-home')
                 .modal-delivery-cost
                     .modal-delivery-cost-title Koszt dostawy:
@@ -46,6 +46,7 @@ div(class='modal modal-order')
                 i(class='fa fa-circle-o')
                 span Odbior osobisty
             a(href='page-contacts.html' class='modal-to-contacts') Gdzie odebrać?
+        div(id='error-message') Nie poprawne dane
         fieldset.modal-result
             .modal-result-summa
                 .modal-result-summa-title Razem:

@@ -123,6 +123,9 @@ h1 {
   font-size: $font-title-large;
   color: #fff;
   line-height: 83px;
+  position: relative!important;
+  z-index: 1!important;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .75);
 }
 
 h2 {
@@ -241,11 +244,9 @@ label {
   box-shadow: 0 0 0 1px $color-crimson;
   border-radius: 22px!important;
   z-index: 1;
-  font-size: $font-M;
-  color: $color-crimson!important;
-  text-align: right!important;
+  font-size: 0;
+  color: transparent!important;
   background: transparent!important;
-  line-height: 35px!important;
 }
 
 fieldset {
@@ -253,14 +254,6 @@ fieldset {
   width: 100%;
   border: none;
   outline: none;
-}
-
-@media(max-width: 1199px) {
-
-}
-
-@media(max-width: 991px) {
-
 }
 
 @media(max-width: 767px) {
@@ -280,9 +273,5 @@ fieldset {
     font-size: $font-title-small;
     margin: 0 0 40px;
   }
-
-}
-
-@media(max-width: 575px) {
 
 }

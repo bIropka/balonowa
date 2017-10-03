@@ -58,13 +58,13 @@
   @include font-main-bold;
   font-size: $font-XXL;
   color: $color-brown;
-}
 
-@media(max-width: 1200px) {
-
-}
-
-@media(max-width: 980px) {
+  span {
+    font-size: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
 
 }
 
@@ -78,9 +78,5 @@
   .product-single {
     padding: 50px 0 35px;
   }
-
-}
-
-@media(max-width: 480px) {
 
 }

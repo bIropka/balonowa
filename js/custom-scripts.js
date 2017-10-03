@@ -89,18 +89,23 @@ $(window).ready(function() {
      ******************* products preview
      ********************************************/
 
-    $('.products').on('click', '#preview-img-modal', function() {
-        $('#preview-img-modal').find('img').prependTo($('.product-image.active'));
-        $('#preview-img-modal').fadeOut();
-        setTimeout(function() {
-            $('#preview-img-modal').remove();
-        }, 500);
-        $('.product-image.active').removeClass('active');
+    $('.products').on('click', '#preview-img-modal', function(event) {
+
+        var target = $(event.target);
+        if (!target.closest($('#preview-img-modal-inner')).length || target.hasClass('close-modal')) {
+            $('#preview-img-modal').find('img').prependTo($('.product-image.active'));
+            $('#preview-img-modal').fadeOut();
+            setTimeout(function() {
+                $('#preview-img-modal').remove();
+            }, 500);
+            $('.product-image.active').removeClass('active');
+        }
+
     });
 
     $('.product-to-preview').click(function() {
-        $('<div id="preview-img-modal"></div>').appendTo($('.products')).fadeIn();
-        $(this).parents('.product-image').find('img').appendTo($('#preview-img-modal'));
+        $('<div id="preview-img-modal"><div id="preview-img-modal-inner"><i class="fa fa-close close-modal"></i></div></div>').appendTo($('.products')).fadeIn().css('display', 'flex');
+        $(this).parents('.product-image').find('img').appendTo($('#preview-img-modal-inner'));
         $(this).parents('.product-image').addClass('active');
     });
 
@@ -112,7 +117,6 @@ $(window).ready(function() {
 
     $('form').validatr({
         showall: true,
-        template: "<div>Error!!!</div>",
         valid: function() {
 
             var formID = $(this).attr('id');
@@ -138,9 +142,18 @@ $(window).ready(function() {
     });
 
     $('.product-to-order').click(function() {
-        var image = $(this).siblings('.product-image').find('img').clone();
-        var name = $(this).siblings('h3').find('a').text();
-        var cost = $(this).siblings('.product-cost').find('span').text();
+
+        var image, name, cost;
+        if($(this).parent().hasClass('product-item')) {
+            image = $(this).siblings('.product-image').find('img').clone();
+            name = $(this).siblings('h3').find('a').text();
+            cost = $(this).siblings('.product-cost').find('span').text();
+        } else if ($(this).parent().hasClass('product-single-info')) {
+            image = $(this).parents('.product-single').find('.product-single-image').find('img').clone();
+            name = $(this).siblings('h2').text();
+            cost = $(this).siblings('.product-single-cost').find('.product-single-cost-value').find('span').text();
+        }
+
         createModalOrder(image, name, cost);
     });
 
@@ -219,4 +232,3 @@ $(window).ready(function() {
     // end of forms
 
 });
-

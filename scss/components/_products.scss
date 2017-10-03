@@ -148,6 +148,8 @@
 
 #preview-img-modal {
   display: none;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -155,18 +157,21 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 1002;
+}
+
+#preview-img-modal-inner {
+  position: relative;
+  width: 600px;
 
   img {
-    width: auto;
+    width: 100%;
     height: auto;
-    max-width: 90%;
-    transform: scale(2);
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 30%;
+  }
+
+  .close-modal {
+    top: 0;
+    right: -40px;
   }
 
 }
@@ -246,11 +251,21 @@
   }
 
   #preview-img-modal {
+    align-items: flex-start;
+    padding-top: 90px;
+
+    #preview-img-modal-inner {
+      width: calc(100% - 80px);
+    }
+
+    .close-modal {
+      top: 15px;
+      right: 15px;
+    }
 
     img {
-      width: 90%;
+      width: 100%;
       transform: none;
-      top: 20px;
     }
 
   }
