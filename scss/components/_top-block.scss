@@ -57,7 +57,8 @@
   height: 398px;
   background: url(../images/background-clouds.png) no-repeat 0 0;
   position: absolute;
-  left: 0!important;
+  margin: auto!important;
+  left: calc(50% - 960px)!important;
   bottom: -225px!important;
   top: auto!important;
   right: auto!important;
