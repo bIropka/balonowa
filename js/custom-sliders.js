@@ -45,6 +45,20 @@ $(window).ready(function() {
         ]
     });
 
+    /* reviews set height */
+    var reviews = $('.slider-reviews').find('.slide');
+    var maxHeight = 0;
+
+    for(var i = 0; i < reviews.length; i++) {
+        if($(reviews[i]).innerHeight() > maxHeight) {
+            maxHeight = $(reviews[i]).innerHeight();
+        }
+    }
+
+    for(var j = 0; j < reviews.length; j++) {
+        $(reviews[j]).innerHeight(maxHeight);
+    }
+
     // end of sliders
 
 });
